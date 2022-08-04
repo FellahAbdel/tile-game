@@ -1,0 +1,60 @@
+body {
+  text-align: center;
+  background-color: #f2d7d9;
+}
+
+#game-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  margin: 3% auto;
+}
+
+.puzzledescription {
+  font-family: "Roboto", sans-serif;
+  margin: 10px;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  background: #343a40;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border-style: none;
+  margin: 10px auto 20px;
+}
+
+.btn:hover {
+  background: #23272b;
+  text-decoration: none;
+}
+#puzzlearea {
+  height: 488px;
+  width: 488px;
+  background-color: #748da6;
+  margin: auto;
+  display: block;
+  padding: 5px;
+}
+.tuile {
+  width: 120px;
+  height: 120px;
+  float: left;
+  border: 1px solid;
+  border-color: #9cb4cc;
+  /* background-image: url("img/00.jpg"); */
+}
+
+.tuile:hover {
+  cursor: pointer;
+}
+
+.tuile p {
+  line-height: 5;
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff,
+    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
