@@ -128,21 +128,35 @@ $("#shuffle").click(function () {
   // shuffleAudio.play();
 });
 
-$(".tuile").click(function () {
-  var songPath = "sounds/click-song.wav";
-  var audio = new Audio(songPath);
-  audio.play();
-  const attrId = $(this).attr("id");
-  const tileNumber = Number(attrId.slice(1, attrId.length));
-  // console.log(randPosition);
-  // console.log("tile number : ", tileNumber);
-  const neigbhorTiles = neigbhorTilesAccessibles(randPosition, tileNumber);
-  if (isThereVoidTile(neigbhorTiles)) {
-    let voidTileNumber = randPosition.indexOf(15);
-    // console.log(voidTileNumber);
-    swap(tileNumber, voidTileNumber);
-    console.log(randPosition);
+function gameIsEnd(randomLst) {
+  for (let i = 0; i < randomLst.length; i++) {
+    if (randomLst[i] !== STARTINGPOSITION[i]) {
+      return false;
+    }
   }
-  // console.log(neigbhorTiles);
-  // console.log("Is there void tile : ", isThereVoidTile(neigbhorTiles));
+  return true;
+}
+
+$(".tuile").click(function () {
+  if (gameIsEnd(randPosition)) {
+    console.log("You solved the puzzle");
+    return;
+  } else {
+    var songPath = "sounds/click-song.wav";
+    var audio = new Audio(songPath);
+    audio.play();
+    const attrId = $(this).attr("id");
+    const tileNumber = Number(attrId.slice(1, attrId.length));
+    // console.log(randPosition);
+    // console.log("tile number : ", tileNumber);
+    const neigbhorTiles = neigbhorTilesAccessibles(randPosition, tileNumber);
+    if (isThereVoidTile(neigbhorTiles)) {
+      let voidTileNumber = randPosition.indexOf(15);
+      // console.log(voidTileNumber);
+      swap(tileNumber, voidTileNumber);
+      console.log(randPosition);
+    }
+    // console.log(neigbhorTiles);
+    // console.log("Is there void tile : ", isThereVoidTile(neigbhorTiles));
+  }
 });
