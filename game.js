@@ -126,6 +126,9 @@ $("#shuffle").click(function () {
   loadImages(randPosition);
   // var shuffleAudio = new Audio("sounds/tile-shuffle.mp3");
   // shuffleAudio.play();
+  startTimer();
+  this.style.display = "none";
+  $("#game-state").text("Le jeu est en cours...");
 });
 
 function gameIsEnd(randomLst) {
@@ -139,6 +142,7 @@ function gameIsEnd(randomLst) {
 
 $(".tuile").click(function () {
   if (gameIsEnd(randPosition)) {
+    $("#output").text("Puzzle soved!");
     console.log("You solved the puzzle");
     return;
   } else {
