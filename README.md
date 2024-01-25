@@ -6,6 +6,8 @@
 $ git clone https://github.com/FellahAbdel/tile-game.git
 ```
 
+## Usage
+
 Open the index.html file in a browser, you should expect to see this:
 
 ![game-image](./cat-puzzle-wait.png)
